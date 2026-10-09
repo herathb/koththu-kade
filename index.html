@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herath Kotththu (හේරත් කොත්තු) - The Ultimate Sizzle</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Noto+Sans+Sinhala:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kottuRed: '#e63946',
+                        kottuOrange: '#f97316',
+                        kottuYellow: '#eab308',
+                        kottuDark: '#0f172a',
+                        kottuCard: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Noto Sans Sinhala', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f8fafc;
+            font-family: 'Outfit', 'Noto Sans Sinhala', sans-serif;
+        }
+        .sizzle-glow {
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.35);
+        }
+        .badge-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.05); }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-amber-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-fire-burner"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black tracking-tight text-white flex items-center gap-1">
+                            HERATH <span class="text-amber-500">KOTHTHTHU</span>
+                        </div>
+                        <p class="text-xs text-amber-400/80 font-medium tracking-wider">හේරත් කොත්තු • HOT & FRESH</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm">
+                    <a href="#hero" class="text-slate-300 hover:text-amber-400 transition-colors">මුල් පිටුව</a>
+                    <a href="#menu" class="text-slate-300 hover:text-amber-400 transition-colors">කොත්තු Menu</a>
+                    <a href="#builder" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <span class="bg-red-600/30 text-red-400 text-xs px-2 py-0.5 rounded-full border border-red-500/30">NEW</span>
+                        Kottu Builder
+                    </a>
+                    <a href="#about" class="text-slate-300 hover:text-amber-400 transition-colors">අපේ කතාව</a>
+                    <a href="#contact" class="text-slate-300 hover:text-amber-400 transition-colors">Location & Contact</a>
+                </nav>
+
+                <!-- Action Buttons & Cart -->
+                <div class="flex items-center gap-4">
+                    <button id="cartBtn" class="relative p-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl border border-slate-700 transition-all flex items-center justify-center">
+                        <i class="fa-solid fa-cart-shopping text-lg text-amber-400"></i>
+                        <span id="cartBadge" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-slate-900 hidden">0</span>
+                    </button>
+
+                    <a href="tel:0771234567" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>077 123 4567</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" class="mobile-nav-link block py-2 text-slate-300 font-medium">මුල් පිටුව (Home)</a>
+            <a href="#menu" class="mobile-nav-link block py-2 text-slate-300 font-medium">කොත්තු Menu</a>
+            <a href="#builder" class="mobile-nav-link block py-2 text-amber-400 font-semibold">Custom Kottu Builder 🛠️</a>
+            <a href="#about" class="mobile-nav-link block py-2 text-slate-300 font-medium">අපේ කතාව</a>
+            <a href="#contact" class="mobile-nav-link block py-2 text-slate-300 font-medium">Location & Contact</a>
+            <div class="pt-2 border-t border-slate-800">
+                <a href="https://wa.me/94771234567" target="_blank" class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-3 rounded-xl">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Order
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="hero" class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <!-- Glowing background blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-amber-400 font-bold text-sm badge-pulse">
+                        <i class="fa-solid fa-fire text-red-500"></i>
+                        <span>ලංකාවේ රසම, උණු උණු කොත්තු පාර!</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight">
+                        Sizzling Hot <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-red-500">
+                            Herath Kotththu!
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        තාච්චියේ රත්වුනු, නයි මිරිස් හොදි පාරත් එක්ක නියම ශ්‍රී ලාංකීය කොත්තු රස විඳින්න. Fresh ingredients, aromatic spices and supreme taste guaranteed!
+                    </p>
+
+                    <!-- Quick Highlights -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-sm text-slate-300 font-medium">
+                        <span class="flex items-center gap-2 bg-slate-800/80 px-3.5 py-2 rounded-lg border border-slate-700">
+                            <i class="fa-solid fa-bolt text-amber-400"></i> Fast Express Delivery
+                        </span>
+                        <span class="flex items-center gap-2 bg-slate-800/80 px-3.5 py-2 rounded-lg border border-slate-700">
+                            <i class="fa-solid fa-pepper-hot text-red-500"></i> Custom Spiciness
+                        </span>
+                        <span class="flex items-center gap-2 bg-slate-800/80 px-3.5 py-2 rounded-lg border border-slate-700">
+                            <i class="fa-solid fa-cheese text-yellow-400"></i> Melted Cheese Specials
+                        </span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 font-black rounded-xl text-lg shadow-xl shadow-orange-600/30 transition-all transform hover:-translate-y-1 text-center">
+                            Menu එක බලන්න <i class="fa-solid fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="#builder" class="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-lg border border-slate-700 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Own Kottu Builder
+                        </a>
+                    </div>
+                    
+                    <!-- Live Status Indicator -->
+                    <div class="pt-4 flex items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
+                        <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
+                        <span class="text-emerald-400 font-semibold">🟢 Open Now: 4:00 PM - 11:30 PM (Daily)</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amber-500 to-red-600 opacity-30 blur-xl"></div>
+                        <div class="relative bg-slate-800/90 border border-slate-700 rounded-3xl p-6 shadow-2xl overflow-hidden text-center">
+                            
+                            <!-- Main Hero Image -->
+                            <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Hot Sri Lankan Kottu Roti" 
+                                 class="w-full h-72 object-cover rounded-2xl shadow-md mb-6 hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/1e293b/f97316?text=Herath+Special+Kottu'">
+                            
+                            <div class="flex justify-between items-center bg-slate-900/90 p-4 rounded-xl border border-slate-700/60">
+                                <div class="text-left">
+                                    <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Today's Hot Seller 🔥</span>
+                                    <h3 class="text-lg font-bold text-white">Herath Special Cheese Mixed Kottu</h3>
+                                    <p class="text-sm text-slate-400">Chicken, Roast Pork/Beef, Cheese & Egg</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xl font-black text-amber-400">Rs. 1,650</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold text-sm uppercase tracking-widest">Our Delicious Selection</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-1">Herath Kottu Menu</h2>
+                <p class="text-slate-400 mt-3 text-base sm:text-lg">ඔබට කැමති කොත්තු වර්ගය තෝරාගන්න. සැර ප්‍රමාණය (Spiciness) ඔබේ අභිමතය පරිදි වෙනස් කරගත හැක!</p>
+            </div>
+
+            <!-- Search and Filter Controls -->
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between mb-10">
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 w-full md:w-auto" id="categoryContainer">
+                    <!-- Dynamic categories injected by JS -->
+                </div>
+
+                <!-- Search Input -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Search Kottu (e.g. Cheese, Chicken)..." 
+                           class="w-full bg-slate-800 border border-slate-700 text-white text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-amber-500 transition-all">
+                </div>
+            </div>
+
+            <!-- Food Cards Grid -->
+            <div id="menuGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Menu items injected dynamically via Javascript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Custom Kottu Builder Section -->
+    <section id="builder" class="py-16 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-red-500/10 text-red-400 font-extrabold text-xs px-3 py-1 rounded-full border border-red-500/30 inline-block mb-2 uppercase">Customizer 🛠️</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white"> Build Your Own Kottu!</h2>
+                <p class="text-slate-400 mt-2">තමන්ට අවශ්‍ය විදියට Base එක, Meat, Cheese සහ Spices එකතු කරලා වෙනස්ම කොත්තුවක් හදාගන්න!</p>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Builder Controls -->
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <!-- Step 1: Base -->
+                    <div>
+                        <label class="block text-amber-400 font-bold text-sm mb-3">1. Select Kottu Base (ප්‍රධාන වර්ගය)</label>
+                        <div class="grid grid-cols-3 gap-3" id="builderBaseOptions">
+                            <button type="button" data-type="base" data-name="Godamba Roti" data-price="350" class="builder-opt active p-3 rounded-xl border border-amber-500 bg-amber-500/10 text-amber-300 text-center font-semibold text-sm">
+                                🫓 Godamba Roti<br><span class="text-xs text-slate-400">Rs. 350</span>
+                            </button>
+                            <button type="button" data-type="base" data-name="String Hopper (ඉඳිආප්ප)" data-price="400" class="builder-opt p-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 text-center font-semibold text-sm hover:border-slate-500">
+                                🍜 String Hopper<br><span class="text-xs text-slate-400">Rs. 400</span>
+                            </button>
+                            <button type="button" data-type="base" data-name="Parotta" data-price="450" class="builder-opt p-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 text-center font-semibold text-sm hover:border-slate-500">
+                                🥐 Crispy Parotta<br><span class="text-xs text-slate-400">Rs. 450</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Proteins / Ingredients -->
+                    <div>
+                        <label class="block text-amber-400 font-bold text-sm mb-3">2. Add Meat & Protein (මස් / එළවළු එකතු කරන්න)</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="builderProteinOptions">
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Roast Chicken" data-price="450" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🍗 Chicken (+Rs.450)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Spicy Beef" data-price="550" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🥩 Beef (+Rs.550)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Seafood Mix" data-price="600" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🦐 Seafood (+Rs.600)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Extra Eggs (2x)" data-price="150" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🥚 Double Egg (+Rs.150)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Cheese & Extras -->
+                    <div>
+                        <label class="block text-amber-400 font-bold text-sm mb-3">3. Extra Flavors & Cheese (චීස් සහ විශේෂ එකතු කිරීම්)</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="builderExtraOptions">
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Melted Cheese" data-price="350" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🧀 Melted Cheese (+Rs.350)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Nai Miris Paste" data-price="100" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🌶️ Nai Miris Blast (+Rs.100)</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:border-slate-600">
+                                <input type="checkbox" data-name="Extra Thick Gravy" data-price="80" class="builder-check w-4 h-4 accent-amber-500">
+                                <span class="text-xs sm:text-sm font-medium">🍲 Extra Curry Gravy (+Rs.80)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Spicy Level -->
+                    <div>
+                        <label class="block text-amber-400 font-bold text-sm mb-3">4. Choose Spiciness (සැර ප්‍රමාණය)</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="spiceLevel" value="Mild / Normal" checked class="peer hidden">
+                                <div class="p-3 text-center border border-slate-700 bg-slate-800 rounded-xl peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400 font-bold text-xs sm:text-sm">
+                                    😊 Normal Spice
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="spiceLevel" value="Hot Sri Lankan" class="peer hidden">
+                                <div class="p-3 text-center border border-slate-700 bg-slate-800 rounded-xl peer-checked:border-orange-500 peer-checked:bg-orange-500/10 peer-checked:text-orange-400 font-bold text-xs sm:text-sm">
+                                    🔥 Hot & Spicy
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="spiceLevel" value="Nai Miris Extra Hot 🌶️🌶️" class="peer hidden">
+                                <div class="p-3 text-center border border-slate-700 bg-slate-800 rounded-xl peer-checked:border-red-500 peer-checked:bg-red-500/10 peer-checked:text-red-400 font-bold text-xs sm:text-sm">
+                                    💀 Nai Miris Hot!
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Custom Summary Card -->
+                <div class="lg:col-span-4 bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-4 border-b border-slate-700 pb-3 flex items-center justify-between">
+                            <span>Your Creation</span>
+                            <i class="fa-solid fa-utensils text-amber-500"></i>
+                        </h3>
+
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <div class="flex justify-between font-semibold">
+                                <span>Base:</span>
+                                <span id="summaryBase" class="text-amber-400">Godamba Roti</span>
+                            </div>
+                            <div>
+                                <span class="font-semibold block mb-1">Add-ons:</span>
+                                <ul id="summaryAddons" class="text-xs text-slate-400 space-y-1 pl-2 border-l-2 border-amber-500/50">
+                                    <li>None selected</li>
+                                </ul>
+                            </div>
+                            <div class="flex justify-between font-semibold pt-2 border-t border-slate-700/60">
+                                <span>Spiciness:</span>
+                                <span id="summarySpice" class="text-red-400">Mild / Normal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-slate-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-slate-400 text-sm">Estimated Total:</span>
+                            <span id="customTotalPrice" class="text-2xl font-black text-amber-400">Rs. 350</span>
+                        </div>
+                        <button id="addCustomToCartBtn" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-slate-950 font-black rounded-xl text-sm shadow-lg shadow-orange-500/20 transition-all">
+                            Add Custom Kottu to Cart 🛒
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="py-12 bg-gradient-to-r from-amber-950/40 via-slate-900 to-red-950/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                <div class="space-y-3 z-10 text-center md:text-left">
+                    <span class="bg-amber-300 text-slate-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Family Combo Offer 🎉</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">Herath Mega Family Feast</h2>
+                    <p class="text-orange-100 text-sm sm:text-base max-w-xl">
+                        2x Large Chicken Cheese Kottu + 1x Roast Pork/Beef Kottu + 4x Chilled Drinks & Gravy buckets!
+                    </p>
+                    <div class="text-3xl font-black text-amber-300 pt-2">
+                        Rs. 3,950 <span class="text-sm line-through text-orange-200 font-normal">Rs. 4,600</span>
+                    </div>
+                </div>
+                <div class="z-10">
+                    <button onclick="addComboToCart()" class="px-8 py-4 bg-slate-950 hover:bg-slate-900 text-amber-400 font-black rounded-2xl text-lg shadow-2xl transition-transform transform hover:scale-105">
+                        Order Combo Now <i class="fa-solid fa-cart-arrow-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Reviews Section -->
+    <section id="about" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <span class="text-amber-500 font-bold text-sm uppercase">Why Herath Kottu?</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-1 mb-4">අපේ කොත්තු පාර වෙනස් වෙන්නේ ඇයි?</h2>
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        "හේරත් කොත්තු" කියන්නේ නිකම්ම කොත්තු කඩයක් නෙවෙයි. අපි හැම කොත්තුවක්ම හදන්නේ නැවුම්ම අමුද්‍රව්‍ය, රහස් මසාලා එකතුව සහ ගෙදර හදන නියම නයි මිරිස් හොදි පාරත් එක්ක.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-drumstick-bite text-amber-400 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">100% Fresh Meat</h4>
+                            <p class="text-xs text-slate-400">දිනපතා ගෙනෙන නැවුම් මස් සහ එළවළු.</p>
+                        </div>
+                        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-fire text-red-500 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Hot Iron Chop</h4>
+                            <p class="text-xs text-slate-400">නියම තාච්චි සද්දෙට රත්වූ උණු කොත්තු.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Grid -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400"></i> What Our Foodies Say
+                    </h3>
+
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="font-bold text-white">Kasun Perera</div>
+                            <div class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="text-slate-300 italic">"ලංකාවේ කාපු සිරාම Cheese Chicken Kottu එක! Nai Miris හොදි එක නම් පිස්සුවක්. Highly recommended!"</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="font-bold text-white">Dilini Fernando</div>
+                            <div class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p class="text-slate-300 italic">"Dolphin Kottu එක මාරම රසයි. Portions ගොඩක් වැඩි. 45 min වලින් ගෙදරටම Delivery ආවා."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-amber-500 font-bold text-sm uppercase">Find Us Easily</span>
+                    <h2 class="text-3xl font-black text-white">කඩේට එන්න හෝ කතාකරන්න</h2>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="flex items-start gap-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-location-dot text-2xl text-amber-400 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Address</h4>
+                                <p class="text-slate-400">No. 142, High Level Road, Maharagama / Colombo, Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-phone text-2xl text-emerald-400 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Hotlines</h4>
+                                <p class="text-slate-400">077 123 4567 / 011 280 9999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-clock text-2xl text-orange-400 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Opening Hours</h4>
+                                <p class="text-slate-400">Everyday: 4:00 PM – 11:30 PM (Night Food Hotspot)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Apps -->
+                    <div class="pt-2">
+                        <p class="text-xs text-slate-400 font-semibold mb-2 uppercase">Also Available On Delivery Apps:</p>
+                        <div class="flex gap-3">
+                            <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs font-bold text-emerald-400">PickMe Food</span>
+                            <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs font-bold text-green-400">Uber Eats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Placeholder Card -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-4 rounded-3xl h-80 relative overflow-hidden flex items-center justify-center text-center">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="relative z-10 p-6 bg-slate-950/80 rounded-2xl backdrop-blur-md max-w-sm border border-slate-700">
+                        <i class="fa-solid fa-map-location-dot text-4xl text-amber-500 mb-2"></i>
+                        <h4 class="text-lg font-bold text-white">Herath Kottu Location</h4>
+                        <p class="text-xs text-slate-400 mb-4">Click below to open Google Maps navigation to our store.</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs transition-colors">
+                            Open Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cartDrawer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden transition-opacity">
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl">
+            
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <h3 class="text-xl font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping text-amber-400"></i>
+                        <span>Your Order Basket</span>
+                    </h3>
+                    <button id="closeCartBtn" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Items list -->
+                <div id="cartItemsList" class="py-4 space-y-3 max-h-[50vh] overflow-y-auto pr-1">
+                    <!-- Dynamic cart items rendered here -->
+                </div>
+            </div>
+
+            <!-- Checkout Section -->
+            <div class="pt-4 border-t border-slate-800 space-y-4">
+                
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm text-slate-400">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal" class="text-white font-bold">Rs. 0</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-400">
+                        <span>Delivery Fee (Approx):</span>
+                        <span class="text-emerald-400 font-bold">Rs. 250</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-black text-white pt-2 border-t border-slate-800">
+                        <span>Total:</span>
+                        <span id="cartGrandTotal" class="text-amber-400">Rs. 250</span>
+                    </div>
+                </div>
+
+                <!-- Customer Details Inputs -->
+                <div class="space-y-2 pt-2">
+                    <input type="text" id="custName" placeholder="ඔබේ නම (Your Name)" class="w-full bg-slate-800 border border-slate-700 text-xs text-white rounded-xl p-2.5 focus:outline-none focus:border-amber-500">
+                    <input type="text" id="custAddress" placeholder="Delivery ලිපිනය / නගරය" class="w-full bg-slate-800 border border-slate-700 text-xs text-white rounded-xl p-2.5 focus:outline-none focus:border-amber-500">
+                    <textarea id="custNotes" placeholder="Special Notes (e.g., හොදි වැඩියෙන් ඕනි, නයි මිරිස් වෙනම...)" class="w-full bg-slate-800 border border-slate-700 text-xs text-white rounded-xl p-2.5 h-16 focus:outline-none focus:border-amber-500"></textarea>
+                </div>
+
+                <button id="whatsappCheckoutBtn" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Send Order via WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Item Option Customizer Modal -->
+    <div id="itemModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 space-y-5 relative shadow-2xl">
+            <button id="closeItemModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex gap-4 items-center">
+                <img id="modalImg" src="" class="w-20 h-20 rounded-2xl object-cover border border-slate-700">
+                <div>
+                    <h3 id="modalTitle" class="text-xl font-bold text-white">Item Name</h3>
+                    <p id="modalPrice" class="text-amber-400 font-extrabold text-lg">Rs. 0</p>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs text-slate-400 font-bold uppercase mb-2">Spiciness Level (සැර):</label>
+                <div class="grid grid-cols-3 gap-2" id="modalSpiceSelect">
+                    <button type="button" class="modal-spice-opt active border border-amber-500 bg-amber-500/20 text-amber-300 text-xs font-bold py-2 rounded-xl" data-spice="Normal">Normal</button>
+                    <button type="button" class="modal-spice-opt border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold py-2 rounded-xl" data-spice="Hot">🔥 Hot</button>
+                    <button type="button" class="modal-spice-opt border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold py-2 rounded-xl" data-spice="Nai Miris">🌶️ Nai Miris</button>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs text-slate-400 font-bold uppercase mb-2">Portion Size:</label>
+                <div class="grid grid-cols-2 gap-2" id="modalPortionSelect">
+                    <button type="button" class="modal-portion-opt active border border-amber-500 bg-amber-500/20 text-amber-300 text-xs font-bold py-2 rounded-xl" data-portion="Full Portion" data-mult="1">Full Portion</button>
+                    <button type="button" class="modal-portion-opt border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold py-2 rounded-xl" data-portion="Half Portion" data-mult="0.65">Half Portion</button>
+                </div>
+            </div>
+
+            <button id="modalConfirmAddToCart" class="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 font-black rounded-xl text-sm shadow-md">
+                Add to Order Basket
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 Herath Kotththu (හේරත් කොත්තු). All Rights Reserved.</p>
+            <p class="mt-1 text-slate-600">The Authentic Sri Lankan Street Food Experience.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Data
+        const menuData = [
+            {
+                id: 1,
+                name: "Herath Special Cheese Chicken Kottu",
+                category: "cheese",
+                price: 1350,
+                desc: "Shredded roti mixed with tender chicken, melted cheese slices, and rich roast curry gravy.",
+                img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80",
+                spicy: "Hot"
+            },
+            {
+                id: 2,
+                name: "Classic Chicken Kottu Roti",
+                category: "chicken",
+                price: 950,
+                desc: "Traditional hot plate Kottu with juicy chicken pieces, crisp veggies, and scrambled eggs.",
+                img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=500&q=80",
+                spicy: "Normal"
+            },
+            {
+                id: 3,
+                name: "Nai Miris Spicy Beef Kottu",
+                category: "beef",
+                price: 1200,
+                desc: "Fiery shredded beef Kottu prepared with authentic Sri Lankan Nai Miris chili paste.",
+                img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80",
+                spicy: "Extra Hot"
+            },
+            {
+                id: 4,
+                name: "Dolphin Cheese Kottu (Chicken/Beef)",
+                category: "cheese",
+                price: 1450,
+                desc: "Cube-cut parotta cubes drenched in cream cheese and spicy gravy with choice of meat.",
+                img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80",
+                spicy: "Hot"
+            },
+            {
+                id: 5,
+                name: "Mixed Seafood Kottu",
+                category: "seafood",
+                price: 1400,
+                desc: "Fresh cuttlefish, prawns, and fish pieces sautéed with egg and parotta roti.",
+                img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=500&q=80",
+                spicy: "Hot"
+            },
+            {
+                id: 6,
+                name: "String Hopper Chicken Kottu",
+                category: "chicken",
+                price: 980,
+                desc: "Steamed red & white string hoppers chopped fine with chicken gravy and vegetables.",
+                img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80",
+                spicy: "Normal"
+            },
+            {
+                id: 7,
+                name: "Double Egg Cheese Kottu",
+                category: "veg",
+                price: 850,
+                desc: "Vegetarian favorite loaded with scrambled eggs, butter, and extra cheddar cheese.",
+                img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=500&q=80",
+                spicy: "Normal"
+            },
+            {
+                id: 8,
+                name: "Cold EGB / Elephant House Soda",
+                category: "drinks",
+                price: 180,
+                desc: "Refreshing 400ml chilled ginger beer to cool off the Sri Lankan spice!",
+                img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80",
+                spicy: "None"
+            }
+        ];
+
+        const categories = [
+            { id: "all", label: "සියල්ල (All)" },
+            { id: "chicken", label: "🍗 Chicken" },
+            { id: "cheese", label: "🧀 Cheese / Dolphin" },
+            { id: "beef", label: "🥩 Beef" },
+            { id: "seafood", label: "🦐 Seafood" },
+            { id: "drinks", label: "🥤 Drinks" }
+        ];
+
+        // State variables
+        let cart = [];
+        let selectedCategory = "all";
+        let activeSelectedItem = null;
+        let selectedModalSpice = "Normal";
+        let selectedModalPortion = "Full Portion";
+        let modalPortionMult = 1;
+
+        // Custom builder state
+        let customBase = { name: "Godamba Roti", price: 350 };
+        let customAddons = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategoryTabs();
+            renderMenuItems();
+            setupBuilderEvents();
+            setupModalEvents();
+            setupCartEvents();
+        });
+
+        // Render Categories
+        function renderCategoryTabs() {
+            const container = document.getElementById('categoryContainer');
+            container.innerHTML = categories.map(cat => `
+                <button onclick="filterCategory('${cat.id}')" 
+                        class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                            selectedCategory === cat.id 
+                            ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20' 
+                            : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700'
+                        }">
+                    ${cat.label}
+                </button>
+            `).join('');
+        }
+
+        function filterCategory(catId) {
+            selectedCategory = catId;
+            renderCategoryTabs();
+            renderMenuItems();
+        }
+
+        // Search Input Listener
+        document.getElementById('searchInput').addEventListener('input', () => {
+            renderMenuItems();
+        });
+
+        function renderMenuItems() {
+            const grid = document.getElementById('menuGrid');
+            const query = document.getElementById('searchInput').value.toLowerCase();
+
+            const filtered = menuData.filter(item => {
+                const matchCat = selectedCategory === 'all' || item.category === selectedCategory;
+                const matchQuery = item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query);
+                return matchCat && matchQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500">
+                        <i class="fa-solid fa-utensils text-4xl mb-3"></i>
+                        <p>කණගාටුයි, සොයන කොත්තු වර්ගය හමුවූයේ නැත.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-4 flex flex-col justify-between hover:border-amber-500/50 transition-all hover:scale-[1.02] shadow-lg">
+                    <div>
+                        <div class="relative mb-3 overflow-hidden rounded-xl h-44">
+                            <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/1e293b/f97316?text=Herath+Kottu'">
+                            <span class="absolute top-2 right-2 bg-slate-950/80 backdrop-blur-md text-amber-400 font-black text-xs px-2.5 py-1 rounded-lg border border-slate-700">
+                                Rs. ${item.price}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-base leading-snug">${item.name}</h3>
+                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">${item.desc}</p>
+                    </div>
+
+                    <div class="pt-4 mt-2 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded ${
+                            item.spicy === 'Extra Hot' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/10 text-amber-400'
+                        }">
+                            🌶️ ${item.spicy}
+                        </span>
+                        <button onclick="openCustomModal(${item.id})" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs rounded-xl shadow transition-colors flex items-center gap-1">
+                            <i class="fa-solid fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Custom Modal Logic
+        function openCustomModal(itemId) {
+            const item = menuData.find(i => i.id === itemId);
+            if (!item) return;
+
+            activeSelectedItem = item;
+            selectedModalSpice = "Normal";
+            selectedModalPortion = "Full Portion";
+            modalPortionMult = 1;
+
+            document.getElementById('modalTitle').innerText = item.name;
+            document.getElementById('modalPrice').innerText = `Rs. ${item.price}`;
+            document.getElementById('modalImg').src = item.img;
+
+            // Reset modal option styling
+            document.querySelectorAll('.modal-spice-opt').forEach(btn => {
+                btn.classList.remove('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                btn.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
+            });
+            const firstSpice = document.querySelector('.modal-spice-opt');
+            if (firstSpice) {
+                firstSpice.classList.add('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+            }
+
+            document.getElementById('itemModal').classList.remove('hidden');
+        }
+
+        function setupModalEvents() {
+            document.getElementById('closeItemModalBtn').onclick = () => {
+                document.getElementById('itemModal').classList.add('hidden');
+            };
+
+            // Spice Selector
+            document.querySelectorAll('.modal-spice-opt').forEach(btn => {
+                btn.onclick = (e) => {
+                    document.querySelectorAll('.modal-spice-opt').forEach(b => {
+                        b.classList.remove('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                        b.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
+                    });
+                    e.currentTarget.classList.add('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                    selectedModalSpice = e.currentTarget.dataset.spice;
+                };
+            });
+
+            // Portion Selector
+            document.querySelectorAll('.modal-portion-opt').forEach(btn => {
+                btn.onclick = (e) => {
+                    document.querySelectorAll('.modal-portion-opt').forEach(b => {
+                        b.classList.remove('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                        b.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
+                    });
+                    e.currentTarget.classList.add('active', 'border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                    selectedModalPortion = e.currentTarget.dataset.portion;
+                    modalPortionMult = parseFloat(e.currentTarget.dataset.mult);
+                    
+                    if (activeSelectedItem) {
+                        const calculated = Math.round(activeSelectedItem.price * modalPortionMult);
+                        document.getElementById('modalPrice').innerText = `Rs. ${calculated}`;
+                    }
+                };
+            });
+
+            document.getElementById('modalConfirmAddToCart').onclick = () => {
+                if (!activeSelectedItem) return;
+
+                const finalPrice = Math.round(activeSelectedItem.price * modalPortionMult);
+                const cartItem = {
+                    title: `${activeSelectedItem.name} (${selectedModalPortion})`,
+                    spice: selectedModalSpice,
+                    price: finalPrice,
+                    qty: 1
+                };
+
+                addToCart(cartItem);
+                document.getElementById('itemModal').classList.add('hidden');
+            };
+        }
+
+        function setupBuilderEvents() {
+            // Base button selector
+            document.querySelectorAll('#builderBaseOptions .builder-opt').forEach(btn => {
+                btn.onclick = (e) => {
+                    document.querySelectorAll('#builderBaseOptions .builder-opt').forEach(b => {
+                        b.classList.remove('border-amber-500', 'bg-amber-500/10', 'text-amber-300');
+                        b.classList.add('border-slate-700', 'bg-slate-800', 'text-slate-300');
+                    });
+                    e.currentTarget.classList.add('border-amber-500', 'bg-amber-500/10', 'text-amber-300');
+                    customBase = {
+                        name: e.currentTarget.dataset.name,
+                        price: parseInt(e.currentTarget.dataset.price)
+                    };
+                    updateBuilderSummary();
+                };
+            });
+
+            // Checkbox options
+            document.querySelectorAll('.builder-check').forEach(chk => {
+                chk.onchange = () => updateBuilderSummary();
+            });
+
+            // Radio options
+            document.querySelectorAll('input[name="spiceLevel"]').forEach(rad => {
+                rad.onchange = () => updateBuilderSummary();
+            });
+
+            document.getElementById('addCustomToCartBtn').onclick = () => {
+                const total = calculateCustomTotal();
+                const addonsList = customAddons.map(a => a.name).join(', ') || 'No extra toppings';
+                const spiceVal = document.querySelector('input[name="spiceLevel"]:checked').value;
+
+                addToCart({
+                    title: `Custom Kottu (${customBase.name})`,
+                    spice: `${spiceVal} [${addonsList}]`,
+                    price: total,
+                    qty: 1
+                });
+            };
+        }
+
+        function calculateCustomTotal() {
+            let total = customBase.price;
+            customAddons = [];
+
+            document.querySelectorAll('.builder-check:checked').forEach(chk => {
+                const price = parseInt(chk.dataset.price);
+                const name = chk.dataset.name;
+                total += price;
+                customAddons.push({ name, price });
+            });
+
+            return total;
+        }
+
+        function updateBuilderSummary() {
+            const total = calculateCustomTotal();
+            document.getElementById('summaryBase').innerText = customBase.name;
+            document.getElementById('customTotalPrice').innerText = `Rs. ${total}`;
+
+            const spiceVal = document.querySelector('input[name="spiceLevel"]:checked').value;
+            document.getElementById('summarySpice').innerText = spiceVal;
+
+            const addonsUl = document.getElementById('summaryAddons');
+            if (customAddons.length === 0) {
+                addonsUl.innerHTML = '<li>None selected</li>';
+            } else {
+                addonsUl.innerHTML = customAddons.map(a => `<li>+ ${a.name} (Rs.${a.price})</li>`).join('');
+            }
+        }
+
+        function addComboToCart() {
+            addToCart({
+                title: "Herath Mega Family Feast Combo",
+                spice: "Mixed Spiciness",
+                price: 3950,
+                qty: 1
+            });
+            openCartDrawer();
+        }
+
+        function addToCart(item) {
+            const existingIndex = cart.findIndex(c => c.title === item.title && c.spice === item.spice);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push(item);
+            }
+            updateCartUI();
+            openCartDrawer();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+            if (totalItems > 0) {
+                badge.classList.remove('hidden');
+                badge.innerText = totalItems;
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            const list = document.getElementById('cartItemsList');
+            if (cart.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-10 text-slate-500 text-xs">
+                        <i class="fa-solid fa-basket-shopping text-3xl mb-2"></i>
+                        <p>ඔබේ Basket එක දැනට හිස්ව පවතී.</p>
+                    </div>
+                `;
+                document.getElementById('cartSubtotal').innerText = "Rs. 0";
+                document.getElementById('cartGrandTotal').innerText = "Rs. 250";
+                return;
+            }
+
+            let subtotal = 0;
+            list.innerHTML = cart.map((item, index) => {
+                const itemTotal = item.price * item.qty;
+                subtotal += itemTotal;
+                return `
+                    <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 flex justify-between items-center gap-2">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-white text-xs leading-tight">${item.title}</h4>
+                            <span class="text-[10px] text-amber-400 font-medium">🌶️ ${item.spice}</span>
+                            <div class="text-xs font-bold text-slate-300 mt-1">Rs. ${item.price}</div>
+                        </div>
+
+                        <div class="flex items-center gap-2 bg-slate-900 px-2 py-1 rounded-lg border border-slate-700">
+                            <button onclick="changeQty(${index}, -1)" class="text-slate-400 hover:text-white text-xs px-1">-</button>
+                            <span class="text-xs font-bold text-amber-400">${item.qty}</span>
+                            <button onclick="changeQty(${index}, 1)" class="text-slate-400 hover:text-white text-xs px-1">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('cartSubtotal').innerText = `Rs. ${subtotal}`;
+            document.getElementById('cartGrandTotal').innerText = `Rs. ${subtotal + 250}`;
+        }
+
+        function changeQty(index, delta) {
+            if (cart[index]) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) {
+                    cart.splice(index, 1);
+                }
+                updateCartUI();
+            }
+        }
+
+        function setupCartEvents() {
+            document.getElementById('cartBtn').onclick = openCartDrawer;
+            document.getElementById('closeCartBtn').onclick = closeCartDrawer;
+
+            // WhatsApp Checkout Generator
+            document.getElementById('whatsappCheckoutBtn').onclick = () => {
+                if (cart.length === 0) {
+                    alert("කරුණාකර පළමුව Item එකක් එක්කරන්න! (Please add an item first)");
+                    return;
+                }
+
+                const name = document.getElementById('custName').value.trim() || 'Valued Customer';
+                const address = document.getElementById('custAddress').value.trim() || 'Takeaway / Not Provided';
+                const notes = document.getElementById('custNotes').value.trim() || 'None';
+
+                let orderText = `🔥 *NEW ORDER - HERATH KOTHTHTHU* 🔥\n\n`;
+                orderText += `👤 *Customer Name:* ${name}\n`;
+                orderText += `📍 *Delivery Address:* ${address}\n\n`;
+                orderText += `📋 *ORDER ITEMS:*\n`;
+
+                let subtotal = 0;
+                cart.forEach((item, idx) => {
+                    const itemTot = item.price * item.qty;
+                    subtotal += itemTot;
+                    orderText += `${idx + 1}. ${item.title} (x${item.qty}) - Rs.${itemTot}\n   • Spice: ${item.spice}\n`;
+                });
+
+                const total = subtotal + 250;
+                orderText += `\n💰 *Subtotal:* Rs. ${subtotal}`;
+                orderText += `\n🛵 *Delivery Fee:* Rs. 250`;
+                orderText += `\n💵 *TOTAL AMOUNT:* Rs. ${total}\n`;
+                orderText += `\n📝 *Notes:* ${notes}\n`;
+                orderText += `\nස්තූතියි! (Thank you!)`;
+
+                const encodedMsg = encodeURIComponent(orderText);
+                const phoneNum = "94771234567"; // Replace with actual Herath Kottu phone number
+                window.open(`https://wa.me/${phoneNum}?text=${encodedMsg}`, '_blank');
+            };
+        }
+
+        function openCartDrawer() {
+            document.getElementById('cartDrawer').classList.remove('hidden');
+        }
+
+        function closeCartDrawer() {
+            document.getElementById('cartDrawer').classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').onclick = () => {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        };
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.onclick = () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            };
+        });
+    </script>
+</body>
+</html>
